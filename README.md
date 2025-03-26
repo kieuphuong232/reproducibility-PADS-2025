@@ -54,16 +54,6 @@ CFM/
 └── README.md      # this file
 ```
 
-<!-- ```bash
-DEv-CF/
-├── bin/        # complied Java class files
-├── input/      # input files
-├── lib/        # external library: fwkDEVS
-├── output/     # output files: report containing execution time, position and speed records
-├── src/        # source code of the DEv-CF model
-└── script.sh   # shell script to compile, run project, and read the report file
-``` -->
-
 ## Article claims
 
 The article has 3 claims:
@@ -88,9 +78,25 @@ After set-up the environment as required, follow these steps to run experiments
 
 ### Small-scale experiments
 
-#### Run on Java
+#### 1. Run Java project
 
-1. Move to the DEv-CF folder: `cd DEv-CF`
+Structure of `DEv-CF` folder
+
+```bash
+DEv-CF/
+├── bin/        # complied Java class files
+├── input/      # input files
+│   ├── input10_3.txt   # data set 3
+│   ├── input10_7.txt   # data set 7
+│   ├── input10_9.txt   # data set 9
+│   └── ...             # other data set
+├── lib/        # external library: fwkDEVS
+├── output/     # output files: report containing execution time, position and speed records
+├── src/        # source code of the DEv-CF model
+└── script.sh   # shell script to compile, run project, and read the report file
+```
+
+1. Open Terminal from `DEv-CF` folder
 
 2. Change the permission to make file executable: `chmod +x script.sh`
 
@@ -98,7 +104,97 @@ After set-up the environment as required, follow these steps to run experiments
 
 The simulation of 10 cars moving on a 1km road was executed with data set 3 from the input file `./input/input10_3.txt`.
 
-You will expected an output on on screen like this:
+You will expected an output on Terminal like this:
 
 ```txt
+time:243.0
+--road1(car_exit_road = Car 10, speed 10m/s, departure time 143.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 10, speed 10m/s, departure time 143.0s, arrival time 0.0s)
+--trans(car_received = Car 10, speed 10m/s, departure time 143.0s, arrival time 243.0s)
+
+======================================================
+|Simulated model: Car-following model simulation
+|Simulation ends at time: 86399.0 t.u
+|Execution time: 61894924 ns
+======================================================
 ```
+
+The execution time could be different depend on the CPU performance.
+
+To continue running other data sets:
+
+4. Open file `./src/Generator.java`
+
+5. At line 20, change the value `numTestFile` from `3` to `7` and save
+
+6. Back to the Terminal, run the script again: `./script.sh`
+
+Now, the simulation of 10 cars from the data set 7 (`./input/`) is executed. 
+
+The results show on Terminal:
+
+```txt
+time:263.1111
+--road1(car_exit_road = Car 10, speed 9m/s, departure time 152.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 10, speed 9m/s, departure time 152.0s, arrival time 0.0s)
+--trans(car_received = Car 10, speed 9m/s, departure time 152.0s, arrival time 263.1111s)
+
+======================================================
+|Simulated model: Car-following model simulation
+|Simulation ends at time: 86399.0 t.u
+|Execution time: 61238642 ns
+======================================================
+```
+
+7. Once again, open file `./src/Generator.java` and change the value `numTestFile` to `9`, then save. Run the script `./script.sh` again to execute simulation with data set 9.
+
+The results show on Terminal:
+
+```txt
+time:251.0
+--road1(car_exit_road = Car 10, speed 8m/s, departure time 126.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 10, speed 8m/s, departure time 126.0s, arrival time 0.0s)
+--trans(car_received = Car 10, speed 8m/s, departure time 126.0s, arrival time 251.0s)
+
+======================================================
+|Simulated model: Car-following model simulation
+|Simulation ends at time: 86399.0 t.u
+|Execution time: 59993262 ns
+======================================================
+```
+
+Now, there are new output show in the structure of `DEv-CF` folder:
+
+```bash
+DEv-CF/
+├── bin/        
+├── input/              # --INPUT FILES--
+│   ├── input10_3.txt   # input data set 3
+│   ├── input10_7.txt   # input data set 7
+│   ├── input10_9.txt   # input data set 9
+│   └── ...             # additional input data sets
+├── lib/
+├── output/             # --OUTPUT FILES--
+│   ├── ...             # additional output files
+│   ├── position10_3    # position records for 10 cars in data set 3
+│   ├── position10_7    # position records for 10 cars in data set 7
+│   ├── position10_9    # position records for 10 cars in data set 9
+│   ├── report          # report file containing port transitions and execution time of the latest simulation
+│   ├── speed10_3       # speed records for 10 cars in data set 3
+│   ├── speed10_7       # speed records for 10 cars in data set 7
+│   └── speed10_9       # Speed records for 10 cars in data set 9
+├── src/        
+└── script.sh   
+```
+
+These output files are used to plot the figure in the third step:
+
+| Output file  | Figure | 
+|--------------|--------|
+| position10_3 | 6a, 7a |
+| position10_7 | 6b     |
+| position10_9 | 6c     |
+| speed10_3    | 7b     |
+
+#### 2. Run SUMO project
+
