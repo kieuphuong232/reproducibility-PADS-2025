@@ -1,1 +1,25 @@
+plot_position('small-scale/position10_3');
+plot_position('small-scale/position10_7');
 plot_position('small-scale/position10_9');
+
+function plot_position(filename)  
+    A = readtable(filename)
+    
+    for k = 1:10
+        veh_data{k} = A(eq(A.CarId,k), ["Time","Position"])
+    end
+
+    figure
+    for k = 1:10
+        plot(table2array(veh_data{k}(:,"Time")), table2array(veh_data{k}(:,"Position")),'DisplayName',['Car' num2str(k)],'LineStyle','-', 'LineWidth', 2)
+        hold on
+    end
+    hold off
+    legend('Location','northeastoutside')
+    grid()
+    xlabel('Time (s)'); ylabel('Position (m)')
+    title('Position (fwkDEVS)','Color','red')
+    ylim([0 1000])
+    xlim([0 250])
+    
+end
