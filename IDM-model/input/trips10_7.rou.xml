@@ -1,0 +1,15 @@
+<routes>
+	<vType id="Car" accel="0.00001" decel="2.0" length="3" cfmodel="IDM"/>
+	<route id="rou0" edges="in out" />
+
+	<vehicle route="rou0" type="Car" id="veh1" depart="11" departSpeed="10" maxSpeed="10"/>
+	<vehicle route="rou0" type="Car" id="veh2" depart="30" departSpeed="13" maxSpeed="13"/>
+	<vehicle route="rou0" type="Car" id="veh3" depart="54" departSpeed="8" maxSpeed="8"/>
+	<vehicle route="rou0" type="Car" id="veh4" depart="73" departSpeed="12" maxSpeed="12"/>
+	<vehicle route="rou0" type="Car" id="veh5" depart="82" departSpeed="12" maxSpeed="12"/>
+	<vehicle route="rou0" type="Car" id="veh6" depart="93" departSpeed="8" maxSpeed="8"/>
+	<vehicle route="rou0" type="Car" id="veh7" depart="113" departSpeed="13" maxSpeed="13"/>
+	<vehicle route="rou0" type="Car" id="veh8" depart="120" departSpeed="10" maxSpeed="10"/>
+	<vehicle route="rou0" type="Car" id="veh9" depart="129" departSpeed="13" maxSpeed="13"/>
+	<vehicle route="rou0" type="Car" id="veh10" depart="152" departSpeed="9" maxSpeed="9"/>
+</routes>
