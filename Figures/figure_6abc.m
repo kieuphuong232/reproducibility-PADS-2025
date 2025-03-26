@@ -1,0 +1,1 @@
+plot_position('small-scale/position10_9');
