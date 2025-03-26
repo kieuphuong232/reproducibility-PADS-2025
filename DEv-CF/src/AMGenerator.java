@@ -17,7 +17,7 @@ public class AMGenerator extends DEVSAtomic {
 	private float sigma, time;
 	
 	static int numCar = 10;
-	static int numTestFile = 9;
+	static int numTestFile = 3;
 	
 	static String test = "input/input";
 	static String filePath = test+String.valueOf(numCar)+"_"+String.valueOf(numTestFile)+".txt";

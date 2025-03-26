@@ -23,15 +23,17 @@ Install
 - Java: https://www.java.com/en/download/manual.jsp
 - SUMO: https://sumo.dlr.de/docs/Downloads.php
 - Python: https://www.python.org/downloads/
+- MATLAB: https://mathworks.com/help/install/ug/install-products-with-internet-connection.html
 
 The hardware/software configuration used by the authors:
 - CPU: Intel Core i5-1035G1 
 - RAM: 8 GB
 - OS: Windows 11
-- Git version 2.39.0
-- Java version 16.0.2
-- SUMO version 1.19.0
-- Python version 3.9.2
+- Git 2.39.0
+- Java 16.0.2
+- SUMO 1.19.0
+- Python 3.9.2
+- MATLAB R2024a
 
 ## Get started
 
@@ -74,7 +76,7 @@ The article has 10 figures that can be procedured. These can be generated throug
 | C2    | 9       | medium-scale|
 | C3    | 10      | large-scale |
 
-After set-up the environment as required, follow these steps to run experiments
+After set-up the environment as required, follow these steps to run experiments.
 
 ### Small-scale experiments
 
@@ -89,7 +91,7 @@ DEv-CF/
 │   ├── input10_3.txt   # data set 3
 │   ├── input10_7.txt   # data set 7
 │   ├── input10_9.txt   # data set 9
-│   └── ...             # other data set
+│   └── ...             # additional data sets
 ├── lib/        # external library: fwkDEVS
 ├── output/     # output files: report containing execution time, position and speed records
 ├── src/        # source code of the DEv-CF model
@@ -104,7 +106,7 @@ DEv-CF/
 
 The simulation of 10 cars moving on a 1km road was executed with data set 3 from the input file `./input/input10_3.txt`.
 
-You will expected an output on Terminal like this:
+Here's what you can expect to see in the terminal:
 
 ```txt
 time:243.0
@@ -125,7 +127,7 @@ To continue running other data sets:
 
 4. Open file `./src/Generator.java`
 
-5. At line 20, change the value `numTestFile` from `3` to `7` and save
+5. At line 20, change the value `numTestFile` from `3` to `7` and save.
 
 6. Back to the Terminal, run the script again: `./script.sh`
 
@@ -163,7 +165,7 @@ time:251.0
 ======================================================
 ```
 
-Now, there are new output show in the structure of `DEv-CF` folder:
+Now, new output files have now appeared in the structure of `DEv-CF` folder:
 
 ```bash
 DEv-CF/
@@ -172,7 +174,7 @@ DEv-CF/
 │   ├── input10_3.txt   # input data set 3
 │   ├── input10_7.txt   # input data set 7
 │   ├── input10_9.txt   # input data set 9
-│   └── ...             # additional input data sets
+│   └── ...             # additional data sets
 ├── lib/
 ├── output/             # --OUTPUT FILES--
 │   ├── ...             # additional output files
@@ -197,4 +199,90 @@ These output files are used to plot the figure in the third step:
 | speed10_3    | 7b     |
 
 #### 2. Run SUMO project
+
+Structure of `IDM-model` folder
+
+```bash
+IDM-model/
+├── config/             # network configuration files
+├── input/              # trip input files
+├── output/             # output files: log files, position and speed records
+└── runSimulation.py    # python script to run simulation
+```
+
+1. Open Teminal from `IDM-model` folder
+
+2. Run the script: `py runSimulation.py`
+
+You will see this output in the terminal:
+
+```txt
+Step #249.00 (0ms ?*RT. ?UPS, TraCI: 0ms, vehicles TOT 10 ACT 0 BUF 0)
+10_3 done
+Step #264.00 (0ms ?*RT. ?UPS, TraCI: 0ms, vehicles TOT 10 ACT 0 BUF 0)
+10_7 done
+Step #252.00 (0ms ?*RT. ?UPS, TraCI: 1ms, vehicles TOT 10 ACT 0 BUF 0)
+10_9 done
+```
+
+The simulations using three different data sets 3, 7 and 9 were executed.
+
+The `IDM-model` folder now includes new output files:
+
+```bash
+IDM-model/
+├── config/            
+├── input/                  # --INPUT FILES--
+│   ├── trips10_3.rou.xml   # input data set 3
+│   ├── trips10_7.rou.xml   # input data set 7
+│   ├── trips10_9.rou.xml   # input data set 9
+│   └── ...                 # additional data sets
+├── output/                 # --OUTPUT FILES--
+│   ├── dump10_3.out.xml    # position and speed records
+│   ├── dump10_7.out.xml    # position and speed records 
+│   ├── dump10_9.out.xml    # position and speed records 
+│   ├── log10_3.txt         # warning and simulation summary records
+│   ├── log10_7.txt         # warning and simulation summary records
+│   └── log10_9.txt         # warning and simulation summary records
+└── runSimulation.py   
+```
+
+We need to convert the XML files to CSV files for data visualization, using the XML2CSV tool of SUMO.
+
+3. Go to the `output` folder: `cd output`
+
+4. Convert these XML files to CSV: 
+
+```bash
+py xml2csv.py dump10_3.out.xml
+py xml2csv.py dump10_7.out.xml
+py xml2csv.py dump10_9.out.xml
+```
+
+If successful, the converted CSV files will appear inside the `output` folder.
+
+```bash
+IDM-model/
+├── config/            
+├── input/ 
+├── output/                 # --OUTPUT FILES--
+│   ├── dump10_3.out.csv    # converted CSV file
+│   ├── dump10_3.out.xml    
+│   ├── dump10_7.out.csv    # converted CSV file
+│   ├── dump10_7.out.xml     
+│   ├── dump10_9.out.csv    # converted CSV file
+│   ├── dump10_9.out.xml    
+│   └── ...
+└── runSimulation.py   
+```
+
+These output files are used to plot the figure in the next step:
+
+| Output file      | Figure | 
+|------------------|--------|
+| dump10_3.out.csv | 6d, 7a, 7b |
+| dump10_7.out.csv | 6e     |
+| dump10_9.out.csv | 6f     |
+
+#### 3. Plot figures on MATLAB
 

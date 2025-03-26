@@ -3,16 +3,11 @@ from sumolib import checkBinary
 
 sumoBinary = checkBinary('sumo')
 
-numCars = 10
-numTestFiles = 9
-
 def main():
 
-    runSimulation(numCars,numTestFiles)
-    
-    # for x in range(1, numTestFiles+1):
-    #     runSimulation(numCars, x)
-            
+    runSimulation(10,3)
+    runSimulation(10,7)
+    runSimulation(10,9)
 
 def runSimulation(nbCars, nbFile):
     # Start simulation 
@@ -20,8 +15,8 @@ def runSimulation(nbCars, nbFile):
         'sumo',
         '-n', './config/net1000.net.xml',
         '-r', f'./input/trips{nbCars}_{nbFile}.rou.xml',
-        '--log', f'./log/log{nbCars}_{nbFile}.txt',
-        '--netstate-dump', f'./log/dump{nbCars}_{nbFile}.out.xml',
+        '--log', f'./output/log{nbCars}_{nbFile}.txt',
+        '--netstate-dump', f'./output/dump{nbCars}_{nbFile}.out.xml',
         '--start'
     ])
 
