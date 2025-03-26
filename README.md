@@ -92,6 +92,13 @@ After set-up the environment as required, follow these steps to run experiments
 
 1. Move to the DEv-CF folder: `cd DEv-CF`
 
+2. Change the permission to make file executable: `chmod +x script.sh`
+
 3. Run the script: `./script.sh`
 
 The simulation of 10 cars moving on a 1km road was executed with data set 3 from the input file `./input/input10_3.txt`.
+
+You will expected an output on on screen like this:
+
+```txt
+```
