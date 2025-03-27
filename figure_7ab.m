@@ -50,7 +50,7 @@ ylim([450,580]);  % Adjust Y-axis for the zoomed-in region
 % Add the arrow
 annotation('arrow',  [0.36, .41], [.5 0.37], 'Color', 'k', 'LineWidth', 1);
 
-saveas(gcf, 'compare_idm_devs.eps', 'epsc');  % 'epsc' saves in color EPS format
+% saveas(gcf, 'compare_idm_devs.eps', 'epsc');  % 'epsc' saves in color EPS format
 
 
 
@@ -67,4 +67,4 @@ xlabel('Time (s)','FontSize', 15); ylabel('Speed (m/s)','FontSize', 15)
 xlim([130 250])
 ylim([7 12])
 set(gca, 'FontSize', 14); 
-saveas(gcf, 'Speed_idm_devs.eps', 'epsc');
+% saveas(gcf, 'Speed_idm_devs.eps', 'epsc');

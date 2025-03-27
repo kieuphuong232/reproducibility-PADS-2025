@@ -286,3 +286,17 @@ These output files are used to plot the figure in the next step:
 
 #### 3. Plot figures on MATLAB
 
+After executing the simulation and converting output data, follow these steps to generate the Figure 6 and Figure 7:
+
+1. Launch MATLAB on your system
+
+2. Navigate to CFM project folder
+
+3. Run the MATLAB scripts: 
+
+```matlab
+figure_6abc.m
+figure_6def.m
+figure_7.m
+```
+
