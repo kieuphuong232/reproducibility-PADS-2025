@@ -18,7 +18,7 @@ public class AMRoad extends DEVSAtomic {
 	Phase phase;
 	
 	private float sigma, time; 
-	HashMap<Float, Integer> NumberOfCar ;
+	HashMap<Float, Integer> numCar ;
 	
 	float length = 0;
 	int vMax = 0;
@@ -78,8 +78,8 @@ public class AMRoad extends DEVSAtomic {
 				
 				// Add car to queue
 				queue.add(carNew);
-				NumberOfCar.put(time, queue.size());
-				WriteInFile("output"+"/NumberOfCar"+AMGenerator.numCar+"_"+AMGenerator.numTestFile,time+","+queue.size());
+				numCar.put(time, queue.size());
+				WriteInFile("output"+"/numCar"+AMGenerator.numCar+"_"+AMGenerator.numTestFile,time+","+queue.size());
 				System.out.println("Number of car on "+this.name+ " : "+queue.size()+" at time : "+time);
 			
 			}
@@ -102,6 +102,7 @@ public class AMRoad extends DEVSAtomic {
 							watingQueue.get(0).setWatingTime(queue.get(queue.size()-1).position, queue.get(queue.size()-1).speedCurrent);
 							
 						}
+						WriteInFile("output"+"/numCar"+AMGenerator.numCar+"_"+AMGenerator.numTestFile,time+","+queue.size());
 					}
 				}
 				else {
@@ -131,8 +132,8 @@ public class AMRoad extends DEVSAtomic {
 						
 						// Add car to queue
 						queue.add(carNew);
-						NumberOfCar.put(time, queue.size());
-//						WriteInFile("output"+"/NumberOfCar"+AMGenerator.numCar+"_"+AMGenerator.numTestFile,time+","+queue.size());
+						numCar.put(time, queue.size());
+						WriteInFile("output"+"/numCar"+AMGenerator.numCar+"_"+AMGenerator.numTestFile,time+","+queue.size());
 						System.out.println("Number of car on "+this.name+ " : "+queue.size()+" at time : "+time);
 					
 						
@@ -178,7 +179,7 @@ public class AMRoad extends DEVSAtomic {
 					carFromWatingQueue.setDeltaT(queue.get(queue.size()-1).getPosition(),
 								queue.get(queue.size()-1).getSpeed());
 					queue.add(carFromWatingQueue);
-					//System.out.println("delta T for : "+carFromWatingQueue.id +" is  " + carFromWatingQueue.getDeltaT());
+					WriteInFile("output"+"/numCar"+AMGenerator.numCar+"_"+AMGenerator.numTestFile,time+","+queue.size());
 
 					if (watingQueue.size()!=0) {
 						watingQueue.get(0).setWatingTime(queue.get(queue.size()-1).position, queue.get(queue.size()-1).speedCurrent);
@@ -210,7 +211,7 @@ public class AMRoad extends DEVSAtomic {
 		time = 0;
 		sigma = Float.POSITIVE_INFINITY;
 		queue = new Vector<Car>();
-		NumberOfCar= new HashMap<>();
+		numCar= new HashMap<>();
 		watingQueue = new Vector<Car>();
 	}
 
@@ -239,8 +240,8 @@ public class AMRoad extends DEVSAtomic {
 			queue.get(0).addSpeed(time);
 			
 			queue.remove(0);
-			NumberOfCar.put(time, queue.size());
-//			WriteInFile("output"+"/NumberOfCar"+AMGenerator.numCar+"_"+AMGenerator.numTestFile,time+","+queue.size());
+			numCar.put(time, queue.size());
+			WriteInFile("output"+"/numCar"+AMGenerator.numCar+"_"+AMGenerator.numTestFile,time+","+queue.size());
 			System.out.println("Number of car on "+this.name+ " : "+queue.size()+" at time : "+time);
 			
 			

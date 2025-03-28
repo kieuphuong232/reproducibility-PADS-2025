@@ -13,8 +13,8 @@ public class Car {
 	 * (float) t 			 : time reaching end of road from current position (s)
 	 * (float) deltaT		 : time reaching front car from current position (s) */
 	
-	int DistaceBetweenCar=3;
-	int CarLenght = 2;
+	int minGap=3;
+	int carLength = 2;
 	String id;
 	int speedCurrent, speedDesire;
 	float departureTime, arrivalTime;
@@ -74,11 +74,11 @@ public class Car {
 		//change it because of the gaps that can be broken
 		if (speedFront < speedCurrent) {
 			// 2024_04_16 deltaTime (s) = deltaDistance (m) / deltaSpeed (m/s)
-			this.deltaT = (positionFront - position - DistaceBetweenCar-CarLenght) / (speedCurrent - speedFront);
-			if((positionFront - position -DistaceBetweenCar-CarLenght)<0) 
+			this.deltaT = (positionFront - position - minGap-carLength) / (speedCurrent - speedFront);
+			if((positionFront - position -minGap-carLength)<0) 
 			{
 				this.deltaT=0;
-				this.position=positionFront-DistaceBetweenCar-CarLenght;
+				this.position=positionFront-minGap-carLength;
 			}
 				
 			
@@ -114,7 +114,7 @@ public class Car {
 		this.speedCurrent = speedFront;
 		// why  i changed it ?
 		//this.t=timeFront;
-		float gaps =  (DistaceBetweenCar+CarLenght) ;
+		float gaps =  (minGap+carLength) ;
 		// i diveded float / int to have a float result
 		this.t = timeFront +  ( gaps  /speedFront );
 		this.deltaT = Float.POSITIVE_INFINITY;
