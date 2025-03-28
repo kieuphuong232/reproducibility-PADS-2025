@@ -306,10 +306,35 @@ To plot Figure 9, follow these steps to run the DEv-CF model and IDM model to co
 
 #### 1. Run Java project
 
-1. Open the Terminal and avigate to the project directory: `CFM/20km/DEv-CF`
+1. Open the Terminal and navigate to the project directory: `CFM/20km/DEv-CF`
 
 2. Change file permission: `chmod +x script.sh` 
 
 3. Execute the script to start the simultion: `./script.sh`
 
 The simulation of 10,000 vehicles on a 20km-road was executed. The results display on Terminal: 
+
+```txt
+time:86388.0
+--gen1(car_generated = Car 10000, speed 5m/s, departure time 86388.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 10000, speed 5m/s, departure time 86388.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 10000, speed 5m/s, departure time 86388.0s, arrival time 0.0s)
+
+time:86389.664
+
+======================================================
+|Simulated model: Car-following model simulation
+|Simulation ends at time: 86399.0 t.u
+|Execution time: 14826926967 ns
+======================================================
+```
+
+Note: Record the execution time for Figure 10 later. 
+
+#### 2. Run SUMO project
+
+1. Open the Terminal and navigate to the directory: `CFM/20km/IDM-model`
+
+2. Run the python script: `py runMediumScale.py`
+
+Here's the results display on the Terminal:
