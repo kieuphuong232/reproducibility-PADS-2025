@@ -430,3 +430,17 @@ To resolve this issue, install the traci module by running the following command
 ```bash
 pip install traci
 ```
+
+### Set-up SUMO_HOME
+
+Find SUMO folder install 
+
+dpkg-query -L sumo
+
+Set SUMO_HOME
+
+export SUMO_HOME=/usr/share/sumo
+
+Convert 
+
+python3 $SUMO_HOME/tools/xml/xml2csv.py output/dump10_3.out.xml
