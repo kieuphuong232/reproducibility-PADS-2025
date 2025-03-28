@@ -414,3 +414,19 @@ Vehicles:
 5. Run the scripts
 
 The figure generated will show a trend similar to Figure 10 in the article.
+
+## Common issues
+
+### Traci library not found
+
+This error occurs when the traci library is not installed or not properly recognized in your Python environment.
+
+```txt
+ModuleNotFoundError: No module named 'traci'
+```
+
+To resolve this issue, install the traci module by running the following command in your terminal:
+
+```bash
+pip install traci
+```
