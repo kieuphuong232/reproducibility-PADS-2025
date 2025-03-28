@@ -20,7 +20,7 @@ def runSimulation(nbCars, nbFile):
         '-r', f'./input/trips{nbCars}_{nbFile}.rou.xml',
         '--log', f'./output/log{nbCars}_{nbFile}.txt',
         # '--netstate-dump', f'./output/dump{nbCars}_{nbFile}.out.xml',
-        # '--summary', f'./output/summary{nbCars}_{nbFile}.xml',
+        # '--summary', f'./output/summary{nbCars}_{nbFile}.out.xml',
         '--start'
     ])
 

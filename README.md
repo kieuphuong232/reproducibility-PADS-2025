@@ -390,7 +390,15 @@ The simulation with 100,000 vehicles is running. Remember to record the executio
 Example: file `CFM/20km/IDM-model/output/log100000_1.txt`
 
 ```txt
-
+Performance: 
+ Duration: 827.03s
+ TraCI-Duration: 26.15s
+ Real time factor: 104.47
+ UPS: 97664.906545
+Vehicles: 
+ Inserted: 16865 (Loaded: 100000)
+ Running: 972
+ Waiting: 83135
 ```
 
 #### 3. Plot figure on MATLAB
