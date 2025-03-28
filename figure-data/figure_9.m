@@ -1,8 +1,8 @@
-SUMO = readtable('20km/IDM-model/output/summary10000_1.out.csv')
+SUMO = readtable('medium-scale/summary10000_1.out.csv')
 time_SUMO = table2array(SUMO(:,"step_time"))/3600
 count_SUMO = table2array(SUMO(:,"step_running"))
 
-DEVS = readtable('20km/DEv-CF/output/numCar10000_1')
+DEVS = readtable('medium-scale/numCar10000_1')
 time_DEVS = table2array(DEVS(:,"Var1"))/3600
 count_DEVS = table2array(DEVS(:,"Var2"))
     

@@ -21,9 +21,9 @@ def runSimulation(nbCars, nbFile):
 
     # Move simulation step
     time = 0
-        while time < 86399:
-            traci.simulationStep()
-            time+=1
+    while time < 86399:
+        traci.simulationStep()
+        time+=1
 
     # End simulation
     traci.close()
