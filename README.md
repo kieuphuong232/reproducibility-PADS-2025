@@ -51,9 +51,12 @@ Ensure that Git is already installed. Open the Terminal and check:
 
 ```bash
 CFM/
-├── DEv-CF/        # Java project: DEv-CF model
-├── IDM-model/     # SUMO project: IDM-model
-└── README.md      # this file
+├── 20km/           # medium- and large-scale experiments
+├── DEv-CF/         # Java project: DEv-CF model
+├── figure-data/    # data for figures (back-up)
+├── IDM-model/      # SUMO project: IDM-model
+├── README.md       # this file
+└── ...             # MATLAB files to plot figures
 ```
 
 ## Article claims
@@ -338,3 +341,68 @@ Note: Record the execution time for Figure 10 later.
 2. Run the python script: `py runMediumScale.py`
 
 Here's the results display on the Terminal:
+
+```txt
+Step #86399.00 (1ms ~= 1000.00*RT, ~17000.00UPS, TraCI: 0ms, vehicles TOT 10000 ACT 17 BUF 0)
+10000_1 done
+```
+
+3. Convert the output to CSV file:
+
+```bash
+py xml2csv.py summary10000_1.out.xml
+```
+
+#### 3. Plot figure on MATLAB
+
+1. Launch MATLAB on your system
+
+2. Navigate to CFM project folder
+
+3. Run the MATLAB scripts: `figure_9.m`
+
+### Large-scale experiments
+
+Follow these steps to collect data and plot the Figure 10.
+
+#### 1. Run Java project
+
+1. Open file `CFM/20km/DEv-CF/src/Generator.java`
+
+2. At line 20, change the value `numCar` to `100000` and save.
+
+3. Open the Terminal and navigate to the project directory: `CFM/20km/DEv-CF` 
+
+6. Run the script to execute project: `./script.sh`
+
+The simulation with 100,000 vehicles is running. Remember to record the execution time displayed on the screen when it completes.
+
+7. Repeat process from initial step, increase the `numCar` value to 200,000, 300,000, 400,000, 500,000, and finally 1,000,000.
+
+#### 2. Run SUMO project
+
+1. Open the Terminal and navigate to the directory: `CFM/20km/IDM-model`
+
+2. Run the python script: `py runLargeScale.py`
+
+3. Check the execution time at the end of the log file in the `output` folder
+
+Example: file `CFM/20km/IDM-model/output/log100000_1.txt`
+
+```txt
+
+```
+
+#### 3. Plot figure on MATLAB
+
+1. Launch MATLAB on your system
+
+2. Navigate to CFM project folder
+
+3. Open the MATLAB file `figure_10.m`
+
+4. Put the execution value in the line 1 and 2
+
+5. Run the scripts
+
+The figure generated will show a trend similar to Figure 10 in the article.
