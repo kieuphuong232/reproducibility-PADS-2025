@@ -104,7 +104,7 @@ DEv-CF/
 
 3. Run the script: `./script.sh`
 
-The simulation of 10 cars moving on a 1km road was executed with data set 3 from the input file `./input/input10_3.txt`.
+The simulation of 10 vehicles moving on a 1km road was executed with data set 3 from the input file `./input/input10_3.txt`.
 
 Here's what you can expect to see in the terminal:
 
@@ -131,7 +131,7 @@ To continue running other data sets:
 
 6. Back to the Terminal, run the script again: `./script.sh`
 
-Now, the simulation of 10 cars from the data set 7 (`./input/`) is executed. 
+Now, the simulation of 10 vehicles from the data set 7 (`./input/`) is executed. 
 
 The results show on Terminal:
 
@@ -300,3 +300,14 @@ figure_6def.m
 figure_7.m
 ```
 
+### Medium-scale experiments
+
+To plot Figure 9, we need to run the DEv-CF model and IDM model to collect the output data, then plot the figure. 
+
+#### 1. Run Java project
+
+1. Go to `CFM/20km/DEv-CF` folder, open the Terminal.
+
+2. Change the permission to make file executable: `chmod +x script.sh` then run the script to execute the DEv-CF project: `./script.sh`
+
+The simulation of 10,000 vehicles moving on a 20km-road was executed. The results show on Terminal: 
