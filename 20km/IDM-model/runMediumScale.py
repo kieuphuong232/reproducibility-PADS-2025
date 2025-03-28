@@ -11,7 +11,7 @@ def runSimulation(nbCars, nbFile):
     # Start simulation 
     traci.start([
         'sumo',
-        '-n', './config/net1000.net.xml',
+        '-n', f'./config/net1000.net.xml',
         '-r', f'./input/trips{nbCars}_{nbFile}.rou.xml',
         '--log', f'./output/log{nbCars}_{nbFile}.txt',
         # '--netstate-dump', f'./output/dump{nbCars}_{nbFile}.out.xml',
