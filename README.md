@@ -302,12 +302,14 @@ figure_7.m
 
 ### Medium-scale experiments
 
-To plot Figure 9, we need to run the DEv-CF model and IDM model to collect the output data, then plot the figure. 
+To plot Figure 9, follow these steps to run the DEv-CF model and IDM model to collect the output data then generate the figure.
 
 #### 1. Run Java project
 
-1. Go to `CFM/20km/DEv-CF` folder, open the Terminal.
+1. Open the Terminal and avigate to the project directory: `CFM/20km/DEv-CF`
 
-2. Change the permission to make file executable: `chmod +x script.sh` then run the script to execute the DEv-CF project: `./script.sh`
+2. Change file permission: `chmod +x script.sh` 
 
-The simulation of 10,000 vehicles moving on a 20km-road was executed. The results show on Terminal: 
+3. Execute the script to start the simultion: `./script.sh`
+
+The simulation of 10,000 vehicles on a 20km-road was executed. The results display on Terminal: 
