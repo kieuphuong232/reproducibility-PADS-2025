@@ -289,7 +289,7 @@ These output files are used to plot the figure in the next step:
 
 #### 3. Plot figures on MATLAB
 
-After executing the simulation and converting output data, follow these steps to generate the Figure 6 and Figure 7:
+After executing the simulation and converting output data, follow these steps to generate the Figure 6 and 7:
 
 1. Launch MATLAB on your system
 
@@ -431,16 +431,23 @@ To resolve this issue, install the traci module by running the following command
 pip install traci
 ```
 
-### Set-up SUMO_HOME
+### Python script xml2csv.py not found
 
-Find SUMO folder install 
+Use the following command to list all files installed by SUMO and find its root directory:
 
+```bash
 dpkg-query -L sumo
+```
+For instance, I found the path `/usr/share/sumo`.
 
-Set SUMO_HOME
+Set the `SUMO_HOME` as enviroment variable:
 
+```bash
 export SUMO_HOME=/usr/share/sumo
+```
 
-Convert 
+Finaaly, write directory path before `xml2csv.py` script:
 
+```bash
 python3 $SUMO_HOME/tools/xml/xml2csv.py output/dump10_3.out.xml
+```
