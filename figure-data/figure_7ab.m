@@ -4,8 +4,8 @@ dev_speed = readtable('small-scale/speed10_3');
 
 k = 9;
 sumo_data{k} = sumo(matches(sumo.vehicle_id, "veh" + string(k)), ["timestep_time","vehicle_pos","vehicle_speed"]);
-devs_pos_data{k} = devs_pos(eq(devs_pos.CarId,k), ["Time","Position"]);
-devs_speed_data{k} = dev_speed(eq(devs_pos.CarId,k), ["Time","Speed"]);
+devs_pos_data{k} = devs_pos(eq(devs_pos.Var1,k), ["Var2","Var3"]);
+devs_speed_data{k} = dev_speed(eq(devs_pos.Var1,k), ["Var2","Var3"]);
 
 %==== Figure 7a ====
 
@@ -14,7 +14,7 @@ figure(1);
 % Plot the main figure (figure 1)
 plot(table2array(sumo_data{k}(:,"timestep_time")), table2array(sumo_data{k}(:,"vehicle_pos")),'DisplayName','IDM','LineStyle','-', 'LineWidth', 2, 'Color','blue')
 hold on
-plot(table2array(devs_pos_data{k}(:,"Time")), table2array(devs_pos_data{k}(:,"Position")),'DisplayName','DEv-CF','LineStyle','--', 'LineWidth', 2)
+plot(table2array(devs_pos_data{k}(:,"Var2")), table2array(devs_pos_data{k}(:,"Var3")),'DisplayName','DEv-CF','LineStyle','--', 'LineWidth', 2)
 hold off
 
 % Add rectangle to highlight the zoom-in area (170 to 200 seconds)
@@ -38,7 +38,7 @@ ax_inset = axes('Position', [0.49, 0.23, 0.35, 0.34]); % Position the inset axes
 % Plot the zoomed-in data (figure 2) in the inset
 plot(table2array(sumo_data{k}(:,"timestep_time")), table2array(sumo_data{k}(:,"vehicle_pos")),'DisplayName','IDM','LineStyle','-', 'LineWidth', 2, 'Color','blue')
 hold on
-plot(table2array(devs_pos_data{k}(:,"Time")), table2array(devs_pos_data{k}(:,"Position")),'DisplayName','DEv-CF','LineStyle','--', 'LineWidth', 2)
+plot(table2array(devs_pos_data{k}(:,"Var2")), table2array(devs_pos_data{k}(:,"Var3")),'DisplayName','DEv-CF','LineStyle','--', 'LineWidth', 2)
 hold off
 
 % Set details for the zoomed-in plot
@@ -59,7 +59,7 @@ saveas(gcf, 'compare_idm_devs.eps', 'epsc');  % 'epsc' saves in color EPS format
 figure(3)
 plot(table2array(sumo_data{k}(:,"timestep_time")), table2array(sumo_data{k}(:,"vehicle_speed")),'DisplayName','IDM','LineStyle','-', 'LineWidth', 2, 'Color','blue')
 hold on
-stairs(table2array(devs_speed_data{k}(:,"Time")), table2array(devs_speed_data{k}(:,"Speed")),'DisplayName','DEv-CF','LineStyle','--', 'LineWidth', 2)
+stairs(table2array(devs_speed_data{k}(:,"Var2")), table2array(devs_speed_data{k}(:,"Var3")),'DisplayName','DEv-CF','LineStyle','--', 'LineWidth', 2)
 hold off
 legend();
 grid();

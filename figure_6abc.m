@@ -6,12 +6,12 @@ function plot_position(filename)
     A = readtable(filename)
     
     for k = 1:10
-        veh_data{k} = A(eq(A.CarId,k), ["Time","Position"])
+        veh_data{k} = A(eq(A.Var1,k), ["Var2","Var3"])
     end
 
     figure
     for k = 1:10
-        plot(table2array(veh_data{k}(:,"Time")), table2array(veh_data{k}(:,"Position")),'DisplayName',['Car' num2str(k)],'LineStyle','-', 'LineWidth', 2)
+        plot(table2array(veh_data{k}(:,"Var2")), table2array(veh_data{k}(:,"Var3")),'DisplayName',['Car' num2str(k)],'LineStyle','-', 'LineWidth', 2)
         hold on
     end
     hold off
