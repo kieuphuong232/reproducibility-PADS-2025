@@ -24,6 +24,7 @@ Install
 - SUMO: https://sumo.dlr.de/docs/Downloads.php
 - Python: https://www.python.org/downloads/
 - MATLAB: https://mathworks.com/help/install/ug/install-products-with-internet-connection.html
+- Eclipse (for Windows user): https://www.eclipse.org/downloads/
 
 The hardware/software configuration used by the authors:
 - CPU: Intel Core i5-1035G1 
@@ -34,6 +35,7 @@ The hardware/software configuration used by the authors:
 - SUMO 1.19.0
 - Python 3.9.2
 - MATLAB R2024a
+- Eclipse 2021-09
 
 ## Get started
 
@@ -143,7 +145,7 @@ time:263.1111
 --road1(car_exit_road = Car 10, speed 9m/s, departure time 152.0s, arrival time 0.0s)
 -trans(trans.Port.car_received = Car 10, speed 9m/s, departure time 152.0s, arrival time 0.0s)
 --trans(car_received = Car 10, speed 9m/s, departure time 152.0s, arrival time 263.1111s)
-
+File
 ======================================================
 |Simulated model: Car-following model simulation
 |Simulation ends at time: 86399.0 t.u
@@ -200,6 +202,16 @@ These output files are used to plot the figure in the third step:
 | position10_7 | 6b     |
 | position10_9 | 6c     |
 | speed10_3    | 7b     |
+
+##### 1.1. Run Java for Windows user
+
+1. Open Eclipse IDE
+
+2. Choose File → Import → Existing Projects into Workspace → Next
+
+3. Choose the folder `DEv-CF` as root directory, then choose Finish.
+
+4. Open the file `Simulator.java`, then click `Ctrl+F11` to run the program.
 
 #### 2. Run SUMO project
 
