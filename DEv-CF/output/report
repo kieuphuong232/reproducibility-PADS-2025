@@ -1,0 +1,112 @@
+
+time:0.0
+
+time:17.0
+--gen1(car_generated = Car 1, speed 11m/s, departure time 17.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 1, speed 11m/s, departure time 17.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 1, speed 11m/s, departure time 17.0s, arrival time 0.0s)
+
+time:37.0
+--gen1(car_generated = Car 2, speed 13m/s, departure time 37.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 2, speed 13m/s, departure time 37.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 2, speed 13m/s, departure time 37.0s, arrival time 0.0s)
+
+time:56.0
+--gen1(car_generated = Car 3, speed 9m/s, departure time 56.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 3, speed 9m/s, departure time 56.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 3, speed 9m/s, departure time 56.0s, arrival time 0.0s)
+
+time:75.0
+--gen1(car_generated = Car 4, speed 10m/s, departure time 75.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 4, speed 10m/s, departure time 75.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 4, speed 10m/s, departure time 75.0s, arrival time 0.0s)
+
+time:87.0
+--gen1(car_generated = Car 5, speed 10m/s, departure time 87.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 5, speed 10m/s, departure time 87.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 5, speed 10m/s, departure time 87.0s, arrival time 0.0s)
+
+time:95.0
+--gen1(car_generated = Car 6, speed 12m/s, departure time 95.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 6, speed 12m/s, departure time 95.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 6, speed 12m/s, departure time 95.0s, arrival time 0.0s)
+
+time:107.90909
+--road1(car_exit_road = Car 1, speed 11m/s, departure time 17.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 1, speed 11m/s, departure time 17.0s, arrival time 0.0s)
+--trans(car_received = Car 1, speed 11m/s, departure time 17.0s, arrival time 107.90909s)
+
+time:111.0
+--gen1(car_generated = Car 7, speed 8m/s, departure time 111.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 7, speed 8m/s, departure time 111.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 7, speed 8m/s, departure time 111.0s, arrival time 0.0s)
+
+time:113.92308
+--road1(car_exit_road = Car 2, speed 13m/s, departure time 37.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 2, speed 13m/s, departure time 37.0s, arrival time 0.0s)
+--trans(car_received = Car 2, speed 13m/s, departure time 37.0s, arrival time 113.92308s)
+
+time:119.0
+--gen1(car_generated = Car 8, speed 8m/s, departure time 119.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 8, speed 8m/s, departure time 119.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 8, speed 8m/s, departure time 119.0s, arrival time 0.0s)
+
+time:132.5
+
+time:138.0
+--gen1(car_generated = Car 9, speed 11m/s, departure time 138.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 9, speed 11m/s, departure time 138.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 9, speed 11m/s, departure time 138.0s, arrival time 0.0s)
+
+time:146.0
+--gen1(car_generated = Car 10, speed 11m/s, departure time 146.0s, arrival time 0.0s)
+-road1(road1.Port.car_enter_road = Car 10, speed 11m/s, departure time 146.0s, arrival time 0.0s)
+--road1(car_enter_road = Car 10, speed 11m/s, departure time 146.0s, arrival time 0.0s)
+
+time:167.11111
+--road1(car_exit_road = Car 3, speed 9m/s, departure time 56.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 3, speed 9m/s, departure time 56.0s, arrival time 0.0s)
+--trans(car_received = Car 3, speed 9m/s, departure time 56.0s, arrival time 167.11111s)
+
+time:175.0
+--road1(car_exit_road = Car 4, speed 10m/s, departure time 75.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 4, speed 10m/s, departure time 75.0s, arrival time 0.0s)
+--trans(car_received = Car 4, speed 10m/s, departure time 75.0s, arrival time 175.0s)
+
+time:187.0
+--road1(car_exit_road = Car 5, speed 10m/s, departure time 87.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 5, speed 10m/s, departure time 87.0s, arrival time 0.0s)
+--trans(car_received = Car 5, speed 10m/s, departure time 87.0s, arrival time 187.0s)
+
+time:187.5
+--road1(car_exit_road = Car 6, speed 10m/s, departure time 95.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 6, speed 10m/s, departure time 95.0s, arrival time 0.0s)
+--trans(car_received = Car 6, speed 10m/s, departure time 95.0s, arrival time 187.5s)
+
+time:214.66667
+
+time:236.0
+--road1(car_exit_road = Car 7, speed 8m/s, departure time 111.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 7, speed 8m/s, departure time 111.0s, arrival time 0.0s)
+--trans(car_received = Car 7, speed 8m/s, departure time 111.0s, arrival time 236.0s)
+
+time:244.0
+--road1(car_exit_road = Car 8, speed 8m/s, departure time 119.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 8, speed 8m/s, departure time 119.0s, arrival time 0.0s)
+--trans(car_received = Car 8, speed 8m/s, departure time 119.0s, arrival time 244.0s)
+
+time:244.625
+--road1(car_exit_road = Car 9, speed 8m/s, departure time 138.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 9, speed 8m/s, departure time 138.0s, arrival time 0.0s)
+--trans(car_received = Car 9, speed 8m/s, departure time 138.0s, arrival time 244.625s)
+
+time:245.25
+--road1(car_exit_road = Car 10, speed 8m/s, departure time 146.0s, arrival time 0.0s)
+-trans(trans.Port.car_received = Car 10, speed 8m/s, departure time 146.0s, arrival time 0.0s)
+--trans(car_received = Car 10, speed 8m/s, departure time 146.0s, arrival time 245.25s)
+
+======================================================
+|Simulated model: Car-following model simulation
+|Simulation ends at time: 86399.0 t.u
+|Execution time: 64292743 ns
+======================================================
