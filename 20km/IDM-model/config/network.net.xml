@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-04-15 15:15:10 by Eclipse SUMO netconvert Version 1.19.0
+<!-- generated on 2024-05-03 16:30:07 by Eclipse SUMO netconvert Version 1.19.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -9,7 +9,7 @@
     </input>
 
     <output>
-        <output-file value="hello.net.xml"/>
+        <output-file value="network.net.xml"/>
     </output>
 
 </configuration>
@@ -17,24 +17,24 @@
 
 <net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
 
-    <location netOffset="10000.00,0.00" convBoundary="0.00,0.00,10001.00,0.00" origBoundary="-10000.00,0.00,1.00,0.00" projParameter="!"/>
+    <location netOffset="22000.00,0.00" convBoundary="0.00,0.00,22001.00,0.00" origBoundary="-22000.00,0.00,1.00,0.00" projParameter="!"/>
 
     <edge id=":2_0" function="internal">
-        <lane id=":2_0_0" index="0" speed="13.89" length="0.10" shape="10000.00,-1.60 10000.00,-1.60"/>
+        <lane id=":2_0_0" index="0" speed="13.89" length="0.10" shape="22000.00,-1.60 22000.00,-1.60"/>
     </edge>
 
     <edge id="in" from="1" to="2" priority="-1">
-        <lane id="in_0" index="0" speed="13.89" length="10000.00" shape="0.00,-1.60 10000.00,-1.60"/>
+        <lane id="in_0" index="0" speed="13.89" length="22000.00" shape="0.00,-1.60 22000.00,-1.60"/>
     </edge>
     <edge id="out" from="2" to="3" priority="-1">
-        <lane id="out_0" index="0" speed="13.89" length="1.00" shape="10000.00,-1.60 10001.00,-1.60"/>
+        <lane id="out_0" index="0" speed="13.89" length="1.00" shape="22000.00,-1.60 22001.00,-1.60"/>
     </edge>
 
     <junction id="1" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-3.20"/>
-    <junction id="2" type="priority" x="10000.00" y="0.00" incLanes="in_0" intLanes=":2_0_0" shape="10000.00,0.00 10000.00,-3.20 10000.00,0.00">
+    <junction id="2" type="priority" x="22000.00" y="0.00" incLanes="in_0" intLanes=":2_0_0" shape="22000.00,0.00 22000.00,-3.20 22000.00,0.00">
         <request index="0" response="0" foes="0" cont="0"/>
     </junction>
-    <junction id="3" type="dead_end" x="10001.00" y="0.00" incLanes="out_0" intLanes="" shape="10001.00,-3.20 10001.00,0.00"/>
+    <junction id="3" type="dead_end" x="22001.00" y="0.00" incLanes="out_0" intLanes="" shape="22001.00,-3.20 22001.00,0.00"/>
 
     <connection from="in" to="out" fromLane="0" toLane="0" via=":2_0_0" dir="s" state="M"/>
 
