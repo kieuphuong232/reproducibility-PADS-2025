@@ -463,3 +463,5 @@ Finaaly, write directory path before `xml2csv.py` script:
 ```bash
 python3 $SUMO_HOME/tools/xml/xml2csv.py output/dump10_3.out.xml
 ```
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8475.svg)](https://doi.org/10.5281/zenodo.8475)
